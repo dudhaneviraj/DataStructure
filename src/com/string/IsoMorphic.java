@@ -30,6 +30,6 @@ public class IsoMorphic {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		System.out.println(isIsomorphic("abc", "xxz"));
+		System.out.println(isIsomorphic("abc", "xyz"));
 	}
 }

@@ -1,3 +1,5 @@
+package com.string;
+
 public class CeasarCypher {
 	
 	public static String decrypt(String cipher)

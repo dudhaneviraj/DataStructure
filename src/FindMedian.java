@@ -1,20 +1,8 @@
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class FindMedian {
-	Comparator<Integer> comparator = new Comparator<Integer>() {
-		@Override
-		public int compare(Integer x, Integer y) {
-			if (x < y) {
-				return -1;
-			} else if (x > y) {
-				return 1;
-			}
-			return 0;
-		}
-	};
 
-	PriorityQueue<Integer> queue = new PriorityQueue<>(comparator);
+	PriorityQueue<Integer> queue = new PriorityQueue<>((x,y)->x-y);
 
 	// Adds a number into the data structure.
 	public void addNum(int num) {
@@ -26,7 +14,7 @@ public class FindMedian {
 		PriorityQueue<Integer> queue = new PriorityQueue<>(this.queue);
 		int n = queue.size();
 		if (n > 2)
-			while (queue.size() != n / 2)
+			while (queue.size() != (n / 2)+1)
 				queue.remove();
 		if (n % 2 == 0 && n >= 2)
 			return (double) (queue.remove() + queue.remove()) / 2;

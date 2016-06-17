@@ -2,31 +2,7 @@ import java.util.Arrays;
 
 public class Temp {
 	
-	public static void quickSort(int input[], int low,int high)
-	{
-		int i=low, j=high;
-		int pivot=input[(i+j)/2];
-		while(i<=j)
-		{
-			while(input[i]<pivot)
-				i++;
-			while(input[j]>pivot)
-				j--;
-			if(i<=j)
-			{
-				int temp=input[i];
-				input[i]=input[j];
-				input[j]=temp;
-				i++;
-				j--;
-			}
-		}
-		if(i<high)
-			quickSort(input, i, high);
-		if(low<j)
-			quickSort(input, low, j);
-	}
-	
+
 	
 	public static int getInteger(String input)
 	{	
@@ -53,11 +29,7 @@ public class Temp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//		int[] input=new int[]{2, 6, 1,23,2,11,34};
-//		quickSort(input,0,6);
-//		System.out.println(Arrays.toString(input));
-		
-		System.out.println(getInteger("-1s263"));;
+		System.out.println(getInteger("-1263"));
 	}
 
 }

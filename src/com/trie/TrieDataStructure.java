@@ -67,19 +67,19 @@ public class TrieDataStructure {
 	
 	
 	
-	TrieDataStructure.Node root;
+	Node root;
 	public void insert(String word)
 	{
 		if(word==null || word.length()==0 || search(word))
 			return;
 		if(root==null)
 			root=new Node(' ');
-		TrieDataStructure.Node current=root;
+		Node current=root;
 		
 		for(char content: word.toCharArray())
 		{
 			if(current.subNode(content)==null)
-				current.child.add(new TrieDataStructure.Node(content));
+				current.child.add(new Node(content));
 			
 			current=current.subNode(content);
 			current.wordCount++;
@@ -91,7 +91,7 @@ public class TrieDataStructure {
 	{
 		if(root==null || !search(word))
 			return;
-		TrieDataStructure.Node current=root;
+		Node current=root;
 		for(char content:word.toCharArray())
 		{
 			if(current.subNode(content).wordCount==1)
@@ -111,7 +111,7 @@ public class TrieDataStructure {
 	{
 		if(root==null || word==null || word.length()==0)
 			return false;
-		TrieDataStructure.Node current=root;
+		Node current=root;
 		for(char content: word.toCharArray())
 		{
 			if(current.subNode(content)==null)
